@@ -1,4 +1,4 @@
-FROM node:16-alpine
+FROM node:16
 
 RUN git clone https://github.com/jacobmischka/ics-merger.git
 WORKDIR /ics-merger
