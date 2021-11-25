@@ -3,6 +3,7 @@ FROM node
 RUN git clone https://github.com/jacobmischka/ics-merger.git
 WORKDIR /ics-merger
 
+RUN echo "{}" > env.json
 RUN yarn install
 RUN yarn build
 
