@@ -9,4 +9,4 @@ RUN yarn build
 
 EXPOSE 3000/tcp
 
-CMD cd /ics-merger && yarn start
+CMD yarn rollup:server && cd /ics-merger && yarn start
