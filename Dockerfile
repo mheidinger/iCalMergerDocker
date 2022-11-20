@@ -1,4 +1,4 @@
-FROM node:18
+FROM node:19
 
 RUN git clone https://github.com/jacobmischka/ics-merger.git
 WORKDIR /ics-merger
