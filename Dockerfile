@@ -1,12 +1,12 @@
-FROM node:16.15.0
+FROM node:20
 
 RUN git clone https://github.com/jacobmischka/ics-merger.git
 WORKDIR /ics-merger
 
 RUN echo "{}" > env.json
 RUN yarn install
-RUN yarn build
+RUN NODE_OPTIONS=--openssl-legacy-provider yarn build
 
 EXPOSE 3000/tcp
 
-CMD cd /ics-merger && yarn start
+CMD yarn rollup:server && cd /ics-merger && yarn start
