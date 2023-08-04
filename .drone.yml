@@ -24,7 +24,7 @@ steps:
 - name: push-public-registry
   image: plugins/docker
   settings:
-    repo: ghcr.io/mheidinger/iCalMergerDocker
+    repo: ghcr.io/mheidinger/ical-merger
     registry: ghcr.io
     tags:
       - latest
@@ -43,7 +43,7 @@ steps:
 - name: update-deployment
   image: plugins/webhook
   settings:
-    urls: https://portainer.max-heidinger.de/api/webhooks/8ae88773-eae6-47d1-b689-3d089a0e01c1
+    urls: https://portainer-castor.max-heidinger.de/api/webhooks/0dfe2b63-96ae-4821-8c64-e319acef5743
     username:
       from_secret: tac_username
     password:
