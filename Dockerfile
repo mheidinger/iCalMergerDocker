@@ -1,4 +1,4 @@
-FROM node:18
+FROM node:20
 
 RUN git clone https://github.com/jacobmischka/ics-merger.git
 WORKDIR /ics-merger
@@ -9,4 +9,4 @@ RUN yarn build
 
 EXPOSE 3000/tcp
 
-CMD yarn rollup:server && cd /ics-merger && yarn start
+CMD cd /ics-merger && yarn start
