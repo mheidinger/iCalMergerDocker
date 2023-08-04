@@ -5,7 +5,7 @@ WORKDIR /ics-merger
 
 RUN echo "{}" > env.json
 RUN yarn install
-RUN yarn build
+RUN NODE_OPTIONS=--openssl-legacy-provider yarn build
 
 EXPOSE 3000/tcp
 
