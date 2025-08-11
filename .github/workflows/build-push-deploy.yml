@@ -5,7 +5,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  push:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -47,6 +47,11 @@ jobs:
             registry-lynx.max-heidinger.de/ical-merger:latest
             registry-lynx.max-heidinger.de/ical-merger:${{ github.sha }}
 
+  deploy:
+    runs-on: ubuntu-latest
+    needs: push
+
+    steps:
       # https://github.com/distributhor/workflow-webhook
       - name: Deploy
         uses: distributhor/workflow-webhook@v3
