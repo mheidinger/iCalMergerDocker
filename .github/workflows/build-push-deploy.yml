@@ -42,10 +42,10 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
+            ghcr.io/mheidinger/ical-merger:latest
+            ghcr.io/mheidinger/ical-merger:${{ github.sha }}
             registry-lynx.max-heidinger.de/ical-merger:latest
             registry-lynx.max-heidinger.de/ical-merger:${{ github.sha }}
-            ghcr.io/${{ github.repository }}:latest
-            ghcr.io/${{ github.repository }}:${{ github.sha }}
 
       # https://github.com/distributhor/workflow-webhook
       - name: Deploy
